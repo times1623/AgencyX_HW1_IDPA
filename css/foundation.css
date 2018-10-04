@@ -203,7 +203,7 @@ sup {
      */
 audio,
 video {
-  display: inline-block;}
+  display: inline-block; }
 
 /**
      * Add the correct display in iOS 4-7.
@@ -3979,10 +3979,9 @@ select {
 .responsive-embed,
 .flex-video {
   position: relative;
-  height: 77vh;
-
-  margin-bottom: 0;
-
+  height: 0;
+  margin-bottom: 1rem;
+  padding-bottom: 75%;
   overflow: hidden; }
   .responsive-embed iframe,
   .responsive-embed object,
