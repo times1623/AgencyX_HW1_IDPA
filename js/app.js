@@ -1,54 +1,39 @@
 $(document).foundation()
 
 // Get the modal
-var modal = document.getElementById('myModal');
+var modal = document.querySelector('#myModal');
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById('myImg');
-var img2 = document.getElementById('myImg2');
-var img3 = document.getElementById('myImg3');
-var img4 = document.getElementById('myImg4');
-var img5 = document.getElementById('myImg5');
-var img6 = document.getElementById('myImg6');
-var modalImg = document.getElementById("img01");
+var img = document.querySelector('#myImg');
+var img2 = document.querySelector('#myImg2');
+var img3 = document.querySelector('#myImg3');
+var img4 = document.querySelector('#myImg4');
+var img5 = document.querySelector('#myImg5');
+var img6 = document.querySelector('#myImg6');
+var modalImg = document.querySelector("#img01");
+var images = document.querySelectorAll('.img');
 
-img.onclick = function(){
+function swapImage(e) {
     modal.style.display = "block";
-    modalImg.src = "images/img1.png";
-}
+    modalImg.src = e.target.src;
 
-//handle click for myImg2
-img2.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = "images/img2.png";
-}
+};
 
-//handle click for myImg3
-img3.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = "images/img3.png";
-}
-img4.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = "images/img4.png";
-}
+for(i=0; i<images.length; i++){
+    images[i].addEventListener('click',swapImage,false);
+};
 
-//handle click for myImg2
-img5.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = "images/img5.jpg";
-}
 
-//handle click for myImg3
-img6.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = "images/img6.png";
-}
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var span = document.querySelectorAll(".close")[0];
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
+
+function closeBox(){
     modal.style.display = "none";
-}
+};
+
+span.addEventListener('click',closeBox,false);
+
+
