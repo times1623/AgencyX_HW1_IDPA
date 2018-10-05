@@ -1,0 +1,60 @@
+// header start here
+#mainHeader {
+    border-bottom: solid $headerSolid $black;
+    padding-bottom: $headerBot; 
+}
+ 
+nav {
+    padding-top: $nav-top;
+}
+
+nav ul li a {
+    font-family: $navFontFam;
+    font-weight: lighter;
+    font-size: $nav-font-mobile;
+}
+
+nav ul li a:last-child {
+    margin-left: $navMargin;
+}
+
+#mainNav ul li {
+    display: inline;
+
+}
+#mainNav ul li a {
+    font-family: $navFontFam;
+    color: $navFontColor;
+}
+
+// header ends here
+
+@media screen and (min-width: 64em) {
+    body {
+        width: 75em; 
+        margin: 0 auto;
+    }
+
+    nav ul {
+        margin-top: $navHeight;
+    }
+
+    nav ul li:last-child {
+        margin-left: $letterSpace;
+    }
+
+    nav ul li a {
+        font-size: $nav-font-desktop;
+            
+    }
+
+
+
+    
+
+    
+
+
+
+
+}   
