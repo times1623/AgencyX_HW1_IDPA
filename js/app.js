@@ -1,39 +1,68 @@
 $(document).foundation()
 
-// Get the modal
 var modal = document.querySelector('#myModal');
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.querySelector('#myImg');
-var img2 = document.querySelector('#myImg2');
-var img3 = document.querySelector('#myImg3');
-var img4 = document.querySelector('#myImg4');
-var img5 = document.querySelector('#myImg5');
-var img6 = document.querySelector('#myImg6');
 var modalImg = document.querySelector("#img01");
-var images = document.querySelectorAll('.img');
+var images = document.querySelectorAll('.portFolioImg');
+var viewBut = document.querySelectorAll('button');
 
 function swapImage(e) {
     modal.style.display = "block";
-    modalImg.src = e.target.src;
+
+
+        if(e.target.id === "myBut"){
+            modalImg.src = images[0].src;
+        
+        };
+        if(e.target.id === "myBut2"){
+            modalImg.src = images[1].src;
+        
+        };
+        if(e.target.id === "myBut3"){
+            modalImg.src = images[2].src;
+        
+        };
+        if(e.target.id === "myBut4"){
+            modalImg.src = images[3].src;
+        
+        };
+        if(e.target.id === "myBut5"){
+            modalImg.src = images[4].src;
+        
+        };
+        if(e.target.id === "myBut6"){
+            modalImg.src = images[5].src;
+        
+        };
+
+        
+        
+
+
+
+        
 
 };
 
 for(i=0; i<images.length; i++){
-    images[i].addEventListener('click',swapImage,false);
+    viewBut[i].addEventListener('click',swapImage,false);
 };
 
-
-
-// Get the <span> element that closes the modal
 var span = document.querySelectorAll(".close")[0];
-
-// When the user clicks on <span> (x), close the modal
 
 function closeBox(){
     modal.style.display = "none";
 };
 
 span.addEventListener('click',closeBox,false);
+
+const zhiqingInfo = document.querySelector('#descInfo').querySelector('p');
+const leeInfo = document.querySelector('#leeDesc').querySelector('p');
+
+function setMemberInfo(data){
+    zhiqingInfo.textContent = data.memberwords[0];
+    leeInfo.textContent = data.memberwords[1];
+}
+
+setMemberInfo(memberData);
 
 
